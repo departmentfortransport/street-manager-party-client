@@ -1,5 +1,4 @@
 export interface WorkstreamCreateRequest {
-  organisation_id: number
   prefix: number
   name: string
   description?: string
