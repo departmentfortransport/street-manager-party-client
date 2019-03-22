@@ -1,5 +1,5 @@
 export interface WorkstreamCreateRequest {
-  prefix: number
+  prefix: string
   name: string
   description?: string
   contact_name?: string
