@@ -29,5 +29,44 @@ class StreetManagerPartyClient {
             }
         });
     }
+    createWorkstream(requestConfig, workstreamCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    httpHandler(request) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                let response = yield request();
+                if (response.data) {
+                    return response.data;
+                }
+            }
+            catch (err) {
+                return this.handleError(err);
+            }
+        });
+    }
+    handleError(err) {
+        err.status = err.response ? err.response.status : http_status_codes_1.INTERNAL_SERVER_ERROR;
+        return Promise.reject(err);
+    }
+    generateRequestConfig(config, request) {
+        let requestConfig = {
+            headers: {
+                'x-request-id': config.requestId
+            }
+        };
+        if (config.token) {
+            requestConfig.headers.token = config.token;
+        }
+        if (!request) {
+            requestConfig.params = {};
+        }
+        else {
+            requestConfig.params = request;
+        }
+        return requestConfig;
+    }
 }
 exports.StreetManagerPartyClient = StreetManagerPartyClient;
