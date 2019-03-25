@@ -28,7 +28,7 @@ export class StreetManagerPartyClient {
   }
 
   public async createWorkstream(requestConfig: RequestConfig, organisationId: number, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse> {
-    return this.httpHandler<WorkstreamCreateResponse>(() => this.axios.post(`/organisations/${organisationId}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)))
+    return this.httpHandler<WorkstreamCreateResponse>(() => this.axios.post(`/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

@@ -31,7 +31,7 @@ class StreetManagerPartyClient {
     }
     createWorkstream(requestConfig, organisationId, workstreamCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/organisations/${organisationId}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {
