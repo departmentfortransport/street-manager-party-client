@@ -10,7 +10,7 @@ export declare class StreetManagerPartyClient {
     private axios;
     constructor(config: StreetManagerPartyClientConfig);
     isAvailable(): Promise<boolean>;
-    createWorkstream(requestConfig: RequestConfig, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
+    createWorkstream(requestConfig: RequestConfig, organisationId: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
