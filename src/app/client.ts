@@ -3,6 +3,7 @@ import {INTERNAL_SERVER_ERROR, OK} from 'http-status-codes'
 import {RequestConfig} from '../interfaces/requestConfig'
 import {WorkstreamCreateRequest} from '../interfaces/workstreamCreateRequest'
 import {WorkstreamCreateResponse} from '../interfaces/workstreamCreateResponse'
+import { WorkstreamResponse } from '../interfaces/workstreamResponse';
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -29,6 +30,10 @@ export class StreetManagerPartyClient {
 
   public async createWorkstream(requestConfig: RequestConfig, organisationId: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse> {
     return this.httpHandler<WorkstreamCreateResponse>(() => this.axios.post(`/organisations/${organisationId}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getWorkstreamDetails(requestConfig: RequestConfig, organisationId: string, workstreamId: string): Promise<WorkstreamResponse> {
+    return this.httpHandler<WorkstreamResponse>(() => this.axios.get(`/organisations/${organisationId}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
