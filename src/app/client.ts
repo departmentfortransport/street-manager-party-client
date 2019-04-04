@@ -3,7 +3,7 @@ import {INTERNAL_SERVER_ERROR, OK} from 'http-status-codes'
 import {RequestConfig} from '../interfaces/requestConfig'
 import {WorkstreamCreateRequest} from '../interfaces/workstreamCreateRequest'
 import {WorkstreamCreateResponse} from '../interfaces/workstreamCreateResponse'
-import { WorkstreamResponse } from '../interfaces/workstreamResponse'
+import {WorkstreamResponse} from '../interfaces/workstreamResponse'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
