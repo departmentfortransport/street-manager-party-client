@@ -1,4 +1,5 @@
 export interface WorkstreamResponse {
+    active: boolean;
     prefix: string;
     name: string;
     description?: string;
