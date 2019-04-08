@@ -1,9 +1,10 @@
-import axios, {AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse} from 'axios'
-import {INTERNAL_SERVER_ERROR, OK} from 'http-status-codes'
-import {RequestConfig} from '../interfaces/requestConfig'
-import {WorkstreamCreateRequest} from '../interfaces/workstreamCreateRequest'
-import {WorkstreamCreateResponse} from '../interfaces/workstreamCreateResponse'
-import {WorkstreamResponse} from '../interfaces/workstreamResponse'
+import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios'
+import { INTERNAL_SERVER_ERROR, OK } from 'http-status-codes'
+import { RequestConfig } from '../interfaces/requestConfig'
+import { WorkstreamCreateRequest } from '../interfaces/workstreamCreateRequest'
+import { WorkstreamCreateResponse } from '../interfaces/workstreamCreateResponse'
+import { WorkstreamResponse } from '../interfaces/workstreamResponse'
+import { OrganisationResponse } from '../interfaces/organisationResponse'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -34,6 +35,10 @@ export class StreetManagerPartyClient {
 
   public async getWorkstreamDetails(requestConfig: RequestConfig, organisationId: string, workstreamId: string): Promise<WorkstreamResponse> {
     return this.httpHandler<WorkstreamResponse>(() => this.axios.get(`/organisations/${organisationId}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getOrganisation(requestConfig: RequestConfig, organisationId: string): Promise<OrganisationResponse> {
+    return this.httpHandler<OrganisationResponse>(() => this.axios.get(`/organisations/${organisationId}`, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
