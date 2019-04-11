@@ -39,6 +39,11 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.get(`/organisations/${organisationId}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)));
         });
     }
+    getOrganisation(requestConfig, organisationId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get(`/organisations/${organisationId}`, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
