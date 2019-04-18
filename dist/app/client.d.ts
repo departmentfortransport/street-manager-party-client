@@ -12,9 +12,10 @@ export declare class StreetManagerPartyClient {
     private axios;
     constructor(config: StreetManagerPartyClientConfig);
     isAvailable(): Promise<boolean>;
-    createWorkstream(requestConfig: RequestConfig, organisationId: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
-    getWorkstreamDetails(requestConfig: RequestConfig, organisationId: string, workstreamId: string): Promise<WorkstreamResponse>;
+    getWorkstream(requestConfig: RequestConfig, organisationId: string, workstreamId: number): Promise<WorkstreamResponse>;
     getOrganisation(requestConfig: RequestConfig, organisationId: string): Promise<OrganisationResponse>;
+    getWorkstreams(requestConfig: RequestConfig, organisationId: string): Promise<WorkstreamResponse[]>;
+    createWorkstream(requestConfig: RequestConfig, organisationId: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
