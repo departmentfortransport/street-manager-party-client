@@ -1,5 +1,6 @@
 import { WorkstreamStatus } from './referenceTypes';
 export interface WorkstreamResponse {
+    workstream_id: number;
     status: WorkstreamStatus;
     prefix: string;
     name: string;
