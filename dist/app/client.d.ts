@@ -4,6 +4,7 @@ import { WorkstreamCreateResponse } from '../interfaces/workstreamCreateResponse
 import { WorkstreamResponse } from '../interfaces/workstreamResponse';
 import { OrganisationResponse } from '../interfaces/organisationResponse';
 import { OrganisationUpdateRequest } from '../interfaces/organisationUpdateRequest';
+import { UserCreateRequest } from '../interfaces/userCreateRequest';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -18,6 +19,7 @@ export declare class StreetManagerPartyClient {
     getWorkstreams(requestConfig: RequestConfig, swaCode: string): Promise<WorkstreamResponse[]>;
     createWorkstream(requestConfig: RequestConfig, swaCode: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
     updateOrganisation(requestConfig: RequestConfig, swaCode: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void>;
+    createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

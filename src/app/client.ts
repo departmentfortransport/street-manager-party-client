@@ -6,6 +6,7 @@ import { WorkstreamCreateResponse } from '../interfaces/workstreamCreateResponse
 import { WorkstreamResponse } from '../interfaces/workstreamResponse'
 import { OrganisationResponse } from '../interfaces/organisationResponse'
 import { OrganisationUpdateRequest } from '../interfaces/organisationUpdateRequest'
+import { UserCreateRequest } from '../interfaces/userCreateRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -48,6 +49,10 @@ export class StreetManagerPartyClient {
 
   public async updateOrganisation(requestConfig: RequestConfig, swaCode: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/organisations/${swaCode}`, organisationUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/users`, userCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
