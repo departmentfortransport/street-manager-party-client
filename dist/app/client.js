@@ -29,24 +29,29 @@ class StreetManagerPartyClient {
             }
         });
     }
-    getWorkstream(requestConfig, organisationId, workstreamId) {
+    getWorkstream(requestConfig, swaCode, workstreamId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/organisations/${organisationId}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/organisations/${swaCode}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getOrganisation(requestConfig, organisationId) {
+    getOrganisation(requestConfig, swaCode) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/organisations/${organisationId}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/organisations/${swaCode}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getWorkstreams(requestConfig, organisationId) {
+    getWorkstreams(requestConfig, swaCode) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/organisations/${organisationId}/workstreams`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/organisations/${swaCode}/workstreams`, this.generateRequestConfig(requestConfig)));
         });
     }
-    createWorkstream(requestConfig, organisationId, workstreamCreateRequest) {
+    createWorkstream(requestConfig, swaCode, workstreamCreateRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/organisations/${organisationId}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/organisations/${swaCode}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    updateOrganisation(requestConfig, swaCode, organisationUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/organisations/${swaCode}`, organisationUpdateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {

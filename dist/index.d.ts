@@ -5,3 +5,4 @@ export * from './interfaces/workstreamCreateResponse';
 export * from './interfaces/workstreamResponse';
 export * from './interfaces/referenceTypes';
 export * from './interfaces/organisationResponse';
+export * from './interfaces/organisationUpdateRequest';

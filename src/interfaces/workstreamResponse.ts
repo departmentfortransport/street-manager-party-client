@@ -9,4 +9,5 @@ export interface WorkstreamResponse {
   contact_name?: string
   contact_number?: string
   contact_email?: string
+  organisation_id: number
 }
