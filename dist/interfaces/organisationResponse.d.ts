@@ -8,4 +8,5 @@ export interface OrganisationResponse {
     phone_number: string;
     postcode: string;
     town?: string;
+    prefix: string;
 }
