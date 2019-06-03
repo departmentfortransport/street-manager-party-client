@@ -16,6 +16,7 @@ export declare class StreetManagerPartyClient {
     constructor(config: StreetManagerPartyClientConfig);
     isAvailable(): Promise<boolean>;
     getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse>;
+    getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]>;
     getOrganisation(requestConfig: RequestConfig, organisationReference: string): Promise<OrganisationResponse>;
     getOrganisations(requestConfig: RequestConfig, request: GetOrganisationsRequest): Promise<OrganisationResponse[]>;
     createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
