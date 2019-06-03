@@ -5,5 +5,6 @@ export declare enum WorkstreamStatus {
 export declare enum UserGroup {
     Planner = "Planner",
     HighwayAuthority = "HighwayAuthority",
-    Admin = "Admin"
+    Admin = "Admin",
+    Contractor = "Contractor"
 }

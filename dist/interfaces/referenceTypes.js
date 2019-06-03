@@ -10,4 +10,5 @@ var UserGroup;
     UserGroup["Planner"] = "Planner";
     UserGroup["HighwayAuthority"] = "HighwayAuthority";
     UserGroup["Admin"] = "Admin";
+    UserGroup["Contractor"] = "Contractor";
 })(UserGroup = exports.UserGroup || (exports.UserGroup = {}));
