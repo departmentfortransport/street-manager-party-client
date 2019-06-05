@@ -11,3 +11,8 @@ var UserGroup;
     UserGroup["HighwayAuthority"] = "HighwayAuthority";
     UserGroup["Admin"] = "Admin";
 })(UserGroup = exports.UserGroup || (exports.UserGroup = {}));
+var OrganisationType;
+(function (OrganisationType) {
+    OrganisationType["Promoter_HA"] = "PROMOTER/HA";
+    OrganisationType["Contractor"] = "CONTRACTOR";
+})(OrganisationType = exports.OrganisationType || (exports.OrganisationType = {}));

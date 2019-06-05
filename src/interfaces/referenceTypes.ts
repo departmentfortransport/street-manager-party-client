@@ -8,3 +8,8 @@ export enum UserGroup {
   HighwayAuthority = 'HighwayAuthority',
   Admin = 'Admin'
 }
+
+export enum OrganisationType {
+  Promoter_HA = 'PROMOTER/HA',
+  Contractor = 'CONTRACTOR'
+}
