@@ -14,11 +14,11 @@ export declare class StreetManagerPartyClient {
     private axios;
     constructor(config: StreetManagerPartyClientConfig);
     isAvailable(): Promise<boolean>;
-    getWorkstream(requestConfig: RequestConfig, swaCode: string, workstreamId: number): Promise<WorkstreamResponse>;
-    getOrganisation(requestConfig: RequestConfig, swaCode: string): Promise<OrganisationResponse>;
-    getWorkstreams(requestConfig: RequestConfig, swaCode: string): Promise<WorkstreamResponse[]>;
-    createWorkstream(requestConfig: RequestConfig, swaCode: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
-    updateOrganisation(requestConfig: RequestConfig, swaCode: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void>;
+    getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse>;
+    getOrganisation(requestConfig: RequestConfig, organisationReference: string): Promise<OrganisationResponse>;
+    getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]>;
+    createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
+    updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void>;
     createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void>;
     private httpHandler;
     private handleError;

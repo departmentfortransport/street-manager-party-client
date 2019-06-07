@@ -31,24 +31,24 @@ export class StreetManagerPartyClient {
     }
   }
 
-  public async getWorkstream(requestConfig: RequestConfig, swaCode: string, workstreamId: number): Promise<WorkstreamResponse> {
-    return this.httpHandler<WorkstreamResponse>(() => this.axios.get(`/organisations/${swaCode}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)))
+  public async getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse> {
+    return this.httpHandler<WorkstreamResponse>(() => this.axios.get(`/organisations/${organisationReference}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getOrganisation(requestConfig: RequestConfig, swaCode: string): Promise<OrganisationResponse> {
-    return this.httpHandler<OrganisationResponse>(() => this.axios.get(`/organisations/${swaCode}`, this.generateRequestConfig(requestConfig)))
+  public async getOrganisation(requestConfig: RequestConfig, organisationReference: string): Promise<OrganisationResponse> {
+    return this.httpHandler<OrganisationResponse>(() => this.axios.get(`/organisations/${organisationReference}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getWorkstreams(requestConfig: RequestConfig, swaCode: string): Promise<WorkstreamResponse[]> {
-    return this.httpHandler<WorkstreamResponse[]>(() => this.axios.get(`/organisations/${swaCode}/workstreams`, this.generateRequestConfig(requestConfig)))
+  public async getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]> {
+    return this.httpHandler<WorkstreamResponse[]>(() => this.axios.get(`/organisations/${organisationReference}/workstreams`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async createWorkstream(requestConfig: RequestConfig, swaCode: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse> {
-    return this.httpHandler<WorkstreamCreateResponse>(() => this.axios.post(`/organisations/${swaCode}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)))
+  public async createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse> {
+    return this.httpHandler<WorkstreamCreateResponse>(() => this.axios.post(`/organisations/${organisationReference}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateOrganisation(requestConfig: RequestConfig, swaCode: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/organisations/${swaCode}`, organisationUpdateRequest, this.generateRequestConfig(requestConfig)))
+  public async updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/organisations/${organisationReference}`, organisationUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void> {
