@@ -7,6 +7,8 @@ import { WorkstreamResponse } from '../interfaces/workstreamResponse'
 import { OrganisationResponse } from '../interfaces/organisationResponse'
 import { OrganisationUpdateRequest } from '../interfaces/organisationUpdateRequest'
 import { UserCreateRequest } from '../interfaces/userCreateRequest'
+import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest'
+import * as qs from 'qs'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -35,12 +37,16 @@ export class StreetManagerPartyClient {
     return this.httpHandler<WorkstreamResponse>(() => this.axios.get(`/organisations/${organisationReference}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)))
   }
 
+  public async getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]> {
+    return this.httpHandler<WorkstreamResponse[]>(() => this.axios.get(`/organisations/${organisationReference}/workstreams`, this.generateRequestConfig(requestConfig)))
+  }
+
   public async getOrganisation(requestConfig: RequestConfig, organisationReference: string): Promise<OrganisationResponse> {
     return this.httpHandler<OrganisationResponse>(() => this.axios.get(`/organisations/${organisationReference}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]> {
-    return this.httpHandler<WorkstreamResponse[]>(() => this.axios.get(`/organisations/${organisationReference}/workstreams`, this.generateRequestConfig(requestConfig)))
+  public async getOrganisations(requestConfig: RequestConfig, request: GetOrganisationsRequest): Promise<OrganisationResponse[]> {
+    return this.httpHandler<OrganisationResponse[]>(() => this.axios.get(`/organisations`, this.generateRequestConfig(requestConfig, request)))
   }
 
   public async createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse> {
@@ -86,6 +92,9 @@ export class StreetManagerPartyClient {
       requestConfig.params = {}
     } else {
       requestConfig.params = request
+      requestConfig.paramsSerializer = (params) => {
+        return qs.stringify(params, { arrayFormat: 'repeat' })
+      }
     }
 
     return requestConfig

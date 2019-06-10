@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const http_status_codes_1 = require("http-status-codes");
+const qs = require("qs");
 class StreetManagerPartyClient {
     constructor(config) {
         this.config = config;
@@ -34,14 +35,19 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)));
         });
     }
+    getWorkstreams(requestConfig, organisationReference) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}/workstreams`, this.generateRequestConfig(requestConfig)));
+        });
+    }
     getOrganisation(requestConfig, organisationReference) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getWorkstreams(requestConfig, organisationReference) {
+    getOrganisations(requestConfig, request) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}/workstreams`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/organisations`, this.generateRequestConfig(requestConfig, request)));
         });
     }
     createWorkstream(requestConfig, organisationReference, workstreamCreateRequest) {
@@ -90,6 +96,9 @@ class StreetManagerPartyClient {
         }
         else {
             requestConfig.params = request;
+            requestConfig.paramsSerializer = (params) => {
+                return qs.stringify(params, { arrayFormat: 'repeat' });
+            };
         }
         return requestConfig;
     }
