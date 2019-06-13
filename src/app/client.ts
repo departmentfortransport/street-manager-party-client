@@ -47,7 +47,7 @@ export class StreetManagerPartyClient {
   }
 
   public async updateWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamPrefix: string, workstreamUpdateRequest: WorkstreamUpdateRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/organisations/${organisationReference}/workstreams/${workstreamPrefix}`, workstreamUpdateRequest, this.generateRequestConfig(requestConfig)))
+    return this.httpHandler<void>(() => this.axios.put(`/organisations/${organisationReference}/workstreams/${workstreamPrefix}`, workstreamUpdateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async getOrganisation(requestConfig: RequestConfig, organisationReference: string): Promise<OrganisationResponse> {
