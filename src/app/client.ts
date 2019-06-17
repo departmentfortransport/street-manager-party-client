@@ -10,6 +10,7 @@ import { OrganisationUpdateRequest } from '../interfaces/organisationUpdateReque
 import { UserCreateRequest } from '../interfaces/userCreateRequest'
 import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest'
 import * as qs from 'qs'
+import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -60,6 +61,10 @@ export class StreetManagerPartyClient {
 
   public async updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.put(`/organisations/${organisationReference}`, organisationUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async createOrganisationContracts(requestConfig: RequestConfig, organisationReference: string, organisationContractsCreateRequest: OrganisationContractsCreateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/organisations/${organisationReference}/contractors`, organisationContractsCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void> {
