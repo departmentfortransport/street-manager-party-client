@@ -40,6 +40,16 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}/workstreams`, this.generateRequestConfig(requestConfig)));
         });
     }
+    createWorkstream(requestConfig, organisationReference, workstreamCreateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/organisations/${organisationReference}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    updateWorkstream(requestConfig, organisationReference, workstreamPrefix, workstreamUpdateRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/organisations/${organisationReference}/workstreams/${workstreamPrefix}`, workstreamUpdateRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     getOrganisation(requestConfig, organisationReference) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}`, this.generateRequestConfig(requestConfig)));
@@ -48,11 +58,6 @@ class StreetManagerPartyClient {
     getOrganisations(requestConfig, request) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/organisations`, this.generateRequestConfig(requestConfig, request)));
-        });
-    }
-    createWorkstream(requestConfig, organisationReference, workstreamCreateRequest) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/organisations/${organisationReference}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     updateOrganisation(requestConfig, organisationReference, organisationUpdateRequest) {

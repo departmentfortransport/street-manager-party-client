@@ -4,6 +4,7 @@ import { RequestConfig } from '../interfaces/requestConfig'
 import { WorkstreamCreateRequest } from '../interfaces/workstreamCreateRequest'
 import { WorkstreamCreateResponse } from '../interfaces/workstreamCreateResponse'
 import { WorkstreamResponse } from '../interfaces/workstreamResponse'
+import { WorkstreamUpdateRequest } from '../interfaces/workstreamUpdateRequest'
 import { OrganisationResponse } from '../interfaces/organisationResponse'
 import { OrganisationUpdateRequest } from '../interfaces/organisationUpdateRequest'
 import { UserCreateRequest } from '../interfaces/userCreateRequest'
@@ -41,16 +42,20 @@ export class StreetManagerPartyClient {
     return this.httpHandler<WorkstreamResponse[]>(() => this.axios.get(`/organisations/${organisationReference}/workstreams`, this.generateRequestConfig(requestConfig)))
   }
 
+  public async createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse> {
+    return this.httpHandler<WorkstreamCreateResponse>(() => this.axios.post(`/organisations/${organisationReference}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamPrefix: string, workstreamUpdateRequest: WorkstreamUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/organisations/${organisationReference}/workstreams/${workstreamPrefix}`, workstreamUpdateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
   public async getOrganisation(requestConfig: RequestConfig, organisationReference: string): Promise<OrganisationResponse> {
     return this.httpHandler<OrganisationResponse>(() => this.axios.get(`/organisations/${organisationReference}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async getOrganisations(requestConfig: RequestConfig, request: GetOrganisationsRequest): Promise<OrganisationResponse[]> {
     return this.httpHandler<OrganisationResponse[]>(() => this.axios.get(`/organisations`, this.generateRequestConfig(requestConfig, request)))
-  }
-
-  public async createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse> {
-    return this.httpHandler<WorkstreamCreateResponse>(() => this.axios.post(`/organisations/${organisationReference}/workstreams`, workstreamCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void> {
