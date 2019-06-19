@@ -9,3 +9,4 @@ export * from './interfaces/organisationResponse';
 export * from './interfaces/organisationUpdateRequest';
 export * from './interfaces/userCreateRequest';
 export * from './interfaces/getOrganisationsRequest';
+export * from './interfaces/organisationContractsCreateRequest';
