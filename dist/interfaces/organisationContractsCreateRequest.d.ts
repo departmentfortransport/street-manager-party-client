@@ -1,3 +1,3 @@
 export interface OrganisationContractsCreateRequest {
-    contractor_organisation_reference: string[];
+    contractor_organisation_references: string[];
 }

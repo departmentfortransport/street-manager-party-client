@@ -1,3 +1,4 @@
+import { OrganisationType } from './referenceTypes';
 export interface OrganisationResponse {
     name: string;
     organisation_reference: string;
@@ -9,4 +10,5 @@ export interface OrganisationResponse {
     postcode: string;
     town?: string;
     prefix: string;
+    organisation_type: OrganisationType;
 }
