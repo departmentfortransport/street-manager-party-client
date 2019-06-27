@@ -1,8 +1,7 @@
 import { OrganisationType } from './referenceTypes'
+import { OrganisationSummaryResponse } from './organisationSummaryResponse'
 
-export interface OrganisationResponse {
-  name: string
-  organisation_reference: string
+export interface OrganisationResponse extends OrganisationSummaryResponse {
   address_line_one: string
   address_line_two?: string
   email: string
@@ -12,4 +11,5 @@ export interface OrganisationResponse {
   town?: string
   prefix: string
   organisation_type: OrganisationType
+  contractors?: OrganisationSummaryResponse[]
 }
