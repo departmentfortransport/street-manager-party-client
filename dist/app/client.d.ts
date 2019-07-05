@@ -26,6 +26,7 @@ export declare class StreetManagerPartyClient {
     updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void>;
     createOrganisationContracts(requestConfig: RequestConfig, organisationReference: string, organisationContractsCreateRequest: OrganisationContractsCreateRequest): Promise<void>;
     createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void>;
+    deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

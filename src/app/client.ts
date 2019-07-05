@@ -71,6 +71,10 @@ export class StreetManagerPartyClient {
     return this.httpHandler<void>(() => this.axios.post(`/users`, userCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.delete(`organisations/${organisationReference}/contractors/${contractorOrganisationReference}`, this.generateRequestConfig(requestConfig)))
+  }
+
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
       let response: AxiosResponse<T> = await request()

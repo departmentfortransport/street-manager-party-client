@@ -75,6 +75,11 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.post(`/users`, userCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    deleteOrganisationContract(requestConfig, organisationReference, contractorOrganisationReference) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.delete(`organisations/${organisationReference}/contractors/${contractorOrganisationReference}`, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
