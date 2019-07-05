@@ -8,7 +8,7 @@ export interface UserCreateRequest {
   /** Max length 99 characters */
   password: string
   /** Max length 4 characters */
-  /** Must match a registered organisation swa_code */
-  swa_code: string
+  /** Must match a registered organisation reference */
+  organisation_reference: string
   role: UserGroup
 }
