@@ -7,7 +7,7 @@ export interface UserCreateRequest {
   /** Min length 6 characters */
   /** Max length 99 characters */
   password: string
-  /** Max length 4 characters */
+  /** Max length 20 characters */
   /** Must match a registered organisation reference */
   organisation_reference: string
   role: UserGroup
