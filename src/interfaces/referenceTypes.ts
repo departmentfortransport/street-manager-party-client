@@ -6,7 +6,8 @@ export enum WorkstreamStatus {
 export enum UserGroup {
   Planner = 'Planner',
   HighwayAuthority = 'HighwayAuthority',
-  Admin = 'Admin'
+  Admin = 'Admin',
+  Contractor = 'Contractor'
 }
 
 export enum OrganisationType {
