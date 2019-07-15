@@ -11,6 +11,7 @@ import { UserCreateRequest } from '../interfaces/userCreateRequest'
 import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest'
 import * as qs from 'qs'
 import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest'
+import { UserResponse } from '../interfaces/userResponse'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -69,6 +70,10 @@ export class StreetManagerPartyClient {
 
   public async createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post(`/users`, userCreateRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async getUser(requestConfig: RequestConfig, email: string): Promise<UserResponse> {
+    return this.httpHandler<UserResponse>(() => this.axios.get(`/users/${email}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void> {
