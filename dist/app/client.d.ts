@@ -8,6 +8,7 @@ import { OrganisationUpdateRequest } from '../interfaces/organisationUpdateReque
 import { UserCreateRequest } from '../interfaces/userCreateRequest';
 import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest';
 import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest';
+import { UserResponse } from '../interfaces/userResponse';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -26,6 +27,7 @@ export declare class StreetManagerPartyClient {
     updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void>;
     createOrganisationContracts(requestConfig: RequestConfig, organisationReference: string, organisationContractsCreateRequest: OrganisationContractsCreateRequest): Promise<void>;
     createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void>;
+    getUser(requestConfig: RequestConfig, email: string): Promise<UserResponse>;
     deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void>;
     private httpHandler;
     private handleError;
