@@ -30,7 +30,7 @@ class StreetManagerPartyClient {
             }
         });
     }
-    refreshToken(requestConfig, tokenRefreshRequest) {
+    refreshTokens(requestConfig, tokenRefreshRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post('/refresh', tokenRefreshRequest, this.generateRequestConfig(requestConfig)));
         });
