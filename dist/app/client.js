@@ -9,8 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
-const http_status_codes_1 = require("http-status-codes");
 const qs = require("qs");
+const http_status_codes_1 = require("http-status-codes");
 class StreetManagerPartyClient {
     constructor(config) {
         this.config = config;
@@ -28,6 +28,16 @@ class StreetManagerPartyClient {
             catch (err) {
                 return false;
             }
+        });
+    }
+    refreshTokens(requestConfig, tokenRefreshRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/refresh', tokenRefreshRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    logout(requestConfig, logoutRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/logout', logoutRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     getWorkstream(requestConfig, organisationReference, workstreamId) {

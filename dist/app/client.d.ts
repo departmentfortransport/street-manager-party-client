@@ -9,6 +9,9 @@ import { UserCreateRequest } from '../interfaces/userCreateRequest';
 import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest';
 import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest';
 import { UserResponse } from '../interfaces/userResponse';
+import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse';
+import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest';
+import { LogoutRequest } from '../interfaces/logoutRequest';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -18,6 +21,8 @@ export declare class StreetManagerPartyClient {
     private axios;
     constructor(config: StreetManagerPartyClientConfig);
     isAvailable(): Promise<boolean>;
+    refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefereshRequest): Promise<TokenRefreshResponse>;
+    logout(requestConfig: RequestConfig, logoutRequest: LogoutRequest): Promise<void>;
     getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse>;
     getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]>;
     createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;

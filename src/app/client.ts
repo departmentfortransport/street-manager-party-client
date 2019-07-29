@@ -1,4 +1,5 @@
 import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios'
+import * as qs from 'qs'
 import { INTERNAL_SERVER_ERROR, OK } from 'http-status-codes'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { WorkstreamCreateRequest } from '../interfaces/workstreamCreateRequest'
@@ -9,9 +10,11 @@ import { OrganisationResponse } from '../interfaces/organisationResponse'
 import { OrganisationUpdateRequest } from '../interfaces/organisationUpdateRequest'
 import { UserCreateRequest } from '../interfaces/userCreateRequest'
 import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest'
-import * as qs from 'qs'
 import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest'
 import { UserResponse } from '../interfaces/userResponse'
+import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse'
+import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest'
+import { LogoutRequest } from '../interfaces/logoutRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -34,6 +37,14 @@ export class StreetManagerPartyClient {
     } catch (err) {
       return false
     }
+  }
+
+  public async refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefereshRequest): Promise<TokenRefreshResponse> {
+    return this.httpHandler<TokenRefreshResponse>(() => this.axios.post('/refresh', tokenRefreshRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async logout(requestConfig: RequestConfig, logoutRequest: LogoutRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post('/logout', logoutRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse> {
