@@ -12,6 +12,8 @@ import { UserResponse } from '../interfaces/userResponse';
 import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse';
 import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest';
 import { LogoutRequest } from '../interfaces/logoutRequest';
+import { UserForgotPasswordRequest } from '../interfaces/userForgotPasswordRequest';
+import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -34,6 +36,8 @@ export declare class StreetManagerPartyClient {
     createOrganisationContracts(requestConfig: RequestConfig, organisationReference: string, organisationContractsCreateRequest: OrganisationContractsCreateRequest): Promise<void>;
     createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void>;
     getUser(requestConfig: RequestConfig, email: string): Promise<UserResponse>;
+    forgotPassword(requestConfig: RequestConfig, userForgotPasswordRequest: UserForgotPasswordRequest): Promise<void>;
+    resetPassword(requestConfig: RequestConfig, userResetPasswordRequest: UserResetPasswordRequest): Promise<void>;
     deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void>;
     private httpHandler;
     private handleError;

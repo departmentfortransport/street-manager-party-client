@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const qs = require("qs");
-const http_status_codes_1 = require("http-status-codes");
 const https_1 = require("https");
+const http_status_codes_1 = require("http-status-codes");
 class StreetManagerPartyClient {
     constructor(config) {
         this.config = config;
@@ -95,6 +95,16 @@ class StreetManagerPartyClient {
     getUser(requestConfig, email) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.get(`/users/${email}`, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    forgotPassword(requestConfig, userForgotPasswordRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/forgot-password`, userForgotPasswordRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    resetPassword(requestConfig, userResetPasswordRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post(`/reset-password`, userResetPasswordRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     deleteOrganisationContract(requestConfig, organisationReference, contractorOrganisationReference) {
