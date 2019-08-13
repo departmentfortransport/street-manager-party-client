@@ -11,13 +11,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const qs = require("qs");
 const http_status_codes_1 = require("http-status-codes");
+const https_1 = require("https");
 class StreetManagerPartyClient {
     constructor(config) {
         this.config = config;
-        this.axios = axios_1.default.create({
+        let axiosRequestConfig = {
             baseURL: this.config.baseURL,
             timeout: this.config.timeout
-        });
+        };
+        if (this.config.disableCertificateVerification) {
+            axiosRequestConfig.httpsAgent = new https_1.Agent({
+                rejectUnauthorized: false
+            });
+        }
+        this.axios = axios_1.default.create(axiosRequestConfig);
     }
     isAvailable() {
         return __awaiter(this, void 0, void 0, function* () {
