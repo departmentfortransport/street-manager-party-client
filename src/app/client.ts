@@ -15,19 +15,29 @@ import { UserResponse } from '../interfaces/userResponse'
 import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse'
 import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest'
 import { LogoutRequest } from '../interfaces/logoutRequest'
+import { Agent } from 'https'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
-  timeout?: number
+  timeout?: number,
+  disableCertificateVerification?: boolean
 }
 
 export class StreetManagerPartyClient {
   private axios: AxiosInstance
   constructor(private config: StreetManagerPartyClientConfig) {
-    this.axios = axios.create({
+    let axiosRequestConfig: AxiosRequestConfig = {
       baseURL: this.config.baseURL,
       timeout: this.config.timeout
-    })
+    }
+
+    if (this.config.disableCertificateVerification) {
+      axiosRequestConfig.httpsAgent = new Agent({
+        rejectUnauthorized: false
+      })
+    }
+
+    this.axios = axios.create(axiosRequestConfig)
   }
 
   public async isAvailable(): Promise<boolean> {

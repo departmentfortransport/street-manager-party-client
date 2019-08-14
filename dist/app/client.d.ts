@@ -15,6 +15,7 @@ import { LogoutRequest } from '../interfaces/logoutRequest';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
+    disableCertificateVerification?: boolean;
 }
 export declare class StreetManagerPartyClient {
     private config;
