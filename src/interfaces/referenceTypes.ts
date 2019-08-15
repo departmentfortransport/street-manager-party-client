@@ -11,6 +11,7 @@ export enum UserGroup {
 }
 
 export enum OrganisationType {
-  Promoter_HA = 'PROMOTER/HA',
+  Promoter = 'PROMOTER',
+  HA = 'HA',
   Contractor = 'CONTRACTOR'
 }

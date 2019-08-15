@@ -14,6 +14,7 @@ var UserGroup;
 })(UserGroup = exports.UserGroup || (exports.UserGroup = {}));
 var OrganisationType;
 (function (OrganisationType) {
-    OrganisationType["Promoter_HA"] = "PROMOTER/HA";
+    OrganisationType["Promoter"] = "PROMOTER";
+    OrganisationType["HA"] = "HA";
     OrganisationType["Contractor"] = "CONTRACTOR";
 })(OrganisationType = exports.OrganisationType || (exports.OrganisationType = {}));
