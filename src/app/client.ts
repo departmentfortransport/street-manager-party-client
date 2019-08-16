@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosPromise, AxiosRequestConfig, AxiosResponse } from 'axios'
 import * as qs from 'qs'
+import { Agent } from 'https'
 import { INTERNAL_SERVER_ERROR, OK } from 'http-status-codes'
 import { RequestConfig } from '../interfaces/requestConfig'
 import { WorkstreamCreateRequest } from '../interfaces/workstreamCreateRequest'
@@ -15,7 +16,8 @@ import { UserResponse } from '../interfaces/userResponse'
 import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse'
 import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest'
 import { LogoutRequest } from '../interfaces/logoutRequest'
-import { Agent } from 'https'
+import { UserForgotPasswordRequest } from '../interfaces/userForgotPasswordRequest'
+import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -95,6 +97,14 @@ export class StreetManagerPartyClient {
 
   public async getUser(requestConfig: RequestConfig, email: string): Promise<UserResponse> {
     return this.httpHandler<UserResponse>(() => this.axios.get(`/users/${email}`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async forgotPassword(requestConfig: RequestConfig, userForgotPasswordRequest: UserForgotPasswordRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/forgot-password`, userForgotPasswordRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async resetPassword(requestConfig: RequestConfig, userResetPasswordRequest: UserResetPasswordRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/reset-password`, userResetPasswordRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void> {
