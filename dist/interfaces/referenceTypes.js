@@ -18,3 +18,9 @@ var OrganisationType;
     OrganisationType["HA"] = "HA";
     OrganisationType["Contractor"] = "CONTRACTOR";
 })(OrganisationType = exports.OrganisationType || (exports.OrganisationType = {}));
+var UserStatus;
+(function (UserStatus) {
+    UserStatus["Confirmed"] = "CONFIRMED";
+    UserStatus["Invited"] = "INVITED";
+    UserStatus["Disabled"] = "DISABLED";
+})(UserStatus = exports.UserStatus || (exports.UserStatus = {}));

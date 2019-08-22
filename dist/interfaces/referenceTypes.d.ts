@@ -13,3 +13,8 @@ export declare enum OrganisationType {
     HA = "HA",
     Contractor = "CONTRACTOR"
 }
+export declare enum UserStatus {
+    Confirmed = "CONFIRMED",
+    Invited = "INVITED",
+    Disabled = "DISABLED"
+}

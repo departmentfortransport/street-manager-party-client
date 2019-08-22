@@ -17,3 +17,4 @@ export * from './interfaces/organisationSummaryResponse';
 export * from './interfaces/tokenRefreshRequest';
 export * from './interfaces/tokenRefreshResponse';
 export * from './interfaces/logoutRequest';
+export * from './interfaces/inviteUserRequest';

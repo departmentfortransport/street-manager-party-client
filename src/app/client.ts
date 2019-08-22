@@ -18,6 +18,7 @@ import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest'
 import { LogoutRequest } from '../interfaces/logoutRequest'
 import { UserForgotPasswordRequest } from '../interfaces/userForgotPasswordRequest'
 import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest'
+import { InviteUserRequest } from '../interfaces/inviteUserRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -109,6 +110,10 @@ export class StreetManagerPartyClient {
 
   public async deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void> {
     return this.httpHandler<void>(() => this.axios.delete(`organisations/${organisationReference}/contractors/${contractorOrganisationReference}`, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async inviteUser(requestConfig: RequestConfig, inviteUserRequest: InviteUserRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/invite-user`, inviteUserRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
