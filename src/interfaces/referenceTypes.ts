@@ -15,3 +15,9 @@ export enum OrganisationType {
   HA = 'HA',
   Contractor = 'CONTRACTOR'
 }
+
+export enum UserStatus {
+  Confirmed = 'CONFIRMED',
+  Invited = 'INVITED',
+  Disabled = 'DISABLED'
+}
