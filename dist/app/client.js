@@ -117,6 +117,11 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.post(`/invite-user`, inviteUserRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    setPassword(requestConfig, setPasswordRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.post('/set-password', setPasswordRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
