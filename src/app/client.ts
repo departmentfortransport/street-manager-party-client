@@ -21,6 +21,7 @@ import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest
 import { InviteUserRequest } from '../interfaces/inviteUserRequest'
 import { SetPasswordRequest } from '../interfaces/setPasswordRequest'
 import { SetPasswordResponse } from '../interfaces/setPasswordResponse'
+import { RemoveUserRequest } from '../interfaces/removeUserRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -120,6 +121,10 @@ export class StreetManagerPartyClient {
 
   public async setPassword(requestConfig: RequestConfig, setPasswordRequest: SetPasswordRequest): Promise<SetPasswordResponse> {
     return this.httpHandler<SetPasswordResponse>(() => this.axios.post('/set-password', setPasswordRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async removeUser(requestConfig: RequestConfig, removeUserRequest: RemoveUserRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/remove-user`, removeUserRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

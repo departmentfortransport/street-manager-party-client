@@ -20,3 +20,4 @@ export * from './interfaces/logoutRequest';
 export * from './interfaces/inviteUserRequest';
 export * from './interfaces/setPasswordRequest';
 export * from './interfaces/setPasswordResponse';
+export * from './interfaces/removeUserRequest';

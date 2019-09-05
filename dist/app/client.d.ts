@@ -17,6 +17,7 @@ import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest
 import { InviteUserRequest } from '../interfaces/inviteUserRequest';
 import { SetPasswordRequest } from '../interfaces/setPasswordRequest';
 import { SetPasswordResponse } from '../interfaces/setPasswordResponse';
+import { RemoveUserRequest } from '../interfaces/removeUserRequest';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -44,6 +45,7 @@ export declare class StreetManagerPartyClient {
     deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void>;
     inviteUser(requestConfig: RequestConfig, inviteUserRequest: InviteUserRequest): Promise<void>;
     setPassword(requestConfig: RequestConfig, setPasswordRequest: SetPasswordRequest): Promise<SetPasswordResponse>;
+    removeUser(requestConfig: RequestConfig, removeUserRequest: RemoveUserRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;
