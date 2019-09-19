@@ -6,7 +6,9 @@ export declare enum UserGroup {
     Planner = "Planner",
     HighwayAuthority = "HighwayAuthority",
     Admin = "Admin",
-    Contractor = "Contractor"
+    Contractor = "Contractor",
+    API = "API",
+    UI = "UI"
 }
 export declare enum OrganisationType {
     Promoter = "PROMOTER",

@@ -153,6 +153,9 @@ class StreetManagerPartyClient {
         if (config.token) {
             requestConfig.headers.token = config.token;
         }
+        if (config.frontendToken) {
+            requestConfig.headers.frontendToken = config.frontendToken;
+        }
         if (!request) {
             requestConfig.params = {};
         }

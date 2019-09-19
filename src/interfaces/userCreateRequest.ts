@@ -10,5 +10,5 @@ export interface UserCreateRequest {
   /** Max length 20 characters */
   /** Must match a registered organisation reference */
   organisation_reference: string
-  role: UserGroup
+  roles: UserGroup[]
 }
