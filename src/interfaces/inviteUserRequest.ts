@@ -4,5 +4,5 @@ import { UserGroup } from './referenceTypes'
 export interface InviteUserRequest {
   /** Max length 50 characters */
   email: string
-  roles: UserGroup[]
+  role: UserGroup
 }
