@@ -7,7 +7,9 @@ export enum UserGroup {
   Planner = 'Planner',
   HighwayAuthority = 'HighwayAuthority',
   Admin = 'Admin',
-  Contractor = 'Contractor'
+  Contractor = 'Contractor',
+  API = 'API',
+  UI = 'UI'
 }
 
 export enum OrganisationType {

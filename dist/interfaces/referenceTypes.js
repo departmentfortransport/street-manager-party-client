@@ -11,6 +11,8 @@ var UserGroup;
     UserGroup["HighwayAuthority"] = "HighwayAuthority";
     UserGroup["Admin"] = "Admin";
     UserGroup["Contractor"] = "Contractor";
+    UserGroup["API"] = "API";
+    UserGroup["UI"] = "UI";
 })(UserGroup = exports.UserGroup || (exports.UserGroup = {}));
 var OrganisationType;
 (function (OrganisationType) {
