@@ -13,6 +13,7 @@ var UserGroup;
     UserGroup["Contractor"] = "Contractor";
     UserGroup["API"] = "API";
     UserGroup["UI"] = "UI";
+    UserGroup["DataExport"] = "DataExport";
 })(UserGroup = exports.UserGroup || (exports.UserGroup = {}));
 var OrganisationType;
 (function (OrganisationType) {

@@ -9,7 +9,8 @@ export enum UserGroup {
   Admin = 'Admin',
   Contractor = 'Contractor',
   API = 'API',
-  UI = 'UI'
+  UI = 'UI',
+  DataExport = 'DataExport'
 }
 
 export enum OrganisationType {

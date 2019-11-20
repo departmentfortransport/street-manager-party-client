@@ -8,7 +8,8 @@ export declare enum UserGroup {
     Admin = "Admin",
     Contractor = "Contractor",
     API = "API",
-    UI = "UI"
+    UI = "UI",
+    DataExport = "DataExport"
 }
 export declare enum OrganisationType {
     Promoter = "PROMOTER",
