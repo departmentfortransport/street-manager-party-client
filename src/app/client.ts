@@ -22,6 +22,7 @@ import { InviteUserRequest } from '../interfaces/inviteUserRequest'
 import { SetPasswordRequest } from '../interfaces/setPasswordRequest'
 import { SetPasswordResponse } from '../interfaces/setPasswordResponse'
 import { RemoveUserRequest } from '../interfaces/removeUserRequest'
+import { InviteAdminRequest } from '../interfaces/inviteAdminRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -117,6 +118,10 @@ export class StreetManagerPartyClient {
 
   public async inviteUser(requestConfig: RequestConfig, inviteUserRequest: InviteUserRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post(`/invite-user`, inviteUserRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async inviteAdmin(requestConfig: RequestConfig, inviteAdminRequest: InviteAdminRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/invite-admin`, inviteAdminRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async setPassword(requestConfig: RequestConfig, setPasswordRequest: SetPasswordRequest): Promise<SetPasswordResponse> {
