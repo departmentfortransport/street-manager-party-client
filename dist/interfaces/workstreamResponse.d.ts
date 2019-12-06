@@ -1,6 +1,5 @@
 import { WorkstreamStatus } from './referenceTypes';
 export interface WorkstreamResponse {
-    workstream_id: number;
     status: WorkstreamStatus;
     prefix: string;
     name: string;
@@ -8,5 +7,5 @@ export interface WorkstreamResponse {
     contact_name?: string;
     contact_number?: string;
     contact_email?: string;
-    organisation_id: number;
+    organisation_reference: string;
 }

@@ -31,7 +31,7 @@ export declare class StreetManagerPartyClient {
     isAvailable(): Promise<boolean>;
     refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefereshRequest): Promise<TokenRefreshResponse>;
     logout(requestConfig: RequestConfig, logoutRequest: LogoutRequest): Promise<void>;
-    getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse>;
+    getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamPrefix: string): Promise<WorkstreamResponse>;
     getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]>;
     createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
     updateWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamPrefix: string, workstreamUpdateRequest: WorkstreamUpdateRequest): Promise<void>;

@@ -47,9 +47,9 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.post('/logout', logoutRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getWorkstream(requestConfig, organisationReference, workstreamId) {
+    getWorkstream(requestConfig, organisationReference, workstreamPrefix) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.get(`/organisations/${organisationReference}/workstreams/${workstreamPrefix}`, this.generateRequestConfig(requestConfig)));
         });
     }
     getWorkstreams(requestConfig, organisationReference) {

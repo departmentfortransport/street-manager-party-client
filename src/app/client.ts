@@ -64,8 +64,8 @@ export class StreetManagerPartyClient {
     return this.httpHandler<void>(() => this.axios.post('/logout', logoutRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse> {
-    return this.httpHandler<WorkstreamResponse>(() => this.axios.get(`/organisations/${organisationReference}/workstreams/${workstreamId}`, this.generateRequestConfig(requestConfig)))
+  public async getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamPrefix: string): Promise<WorkstreamResponse> {
+    return this.httpHandler<WorkstreamResponse>(() => this.axios.get(`/organisations/${organisationReference}/workstreams/${workstreamPrefix}`, this.generateRequestConfig(requestConfig)))
   }
 
   public async getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]> {
