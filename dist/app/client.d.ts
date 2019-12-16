@@ -10,7 +10,7 @@ import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest';
 import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest';
 import { UserResponse } from '../interfaces/userResponse';
 import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse';
-import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest';
+import { TokenRefreshRequest } from '../interfaces/tokenRefreshRequest';
 import { LogoutRequest } from '../interfaces/logoutRequest';
 import { UserForgotPasswordRequest } from '../interfaces/userForgotPasswordRequest';
 import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest';
@@ -30,7 +30,7 @@ export declare class StreetManagerPartyClient {
     private axios;
     constructor(config: StreetManagerPartyClientConfig);
     isAvailable(): Promise<boolean>;
-    refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefereshRequest): Promise<TokenRefreshResponse>;
+    refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefreshRequest): Promise<TokenRefreshResponse>;
     logout(requestConfig: RequestConfig, logoutRequest: LogoutRequest): Promise<void>;
     getWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamId: number): Promise<WorkstreamResponse>;
     getWorkstreams(requestConfig: RequestConfig, organisationReference: string): Promise<WorkstreamResponse[]>;
