@@ -14,7 +14,7 @@ import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest'
 import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest'
 import { UserResponse } from '../interfaces/userResponse'
 import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse'
-import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest'
+import { TokenRefreshRequest } from '../interfaces/tokenRefreshRequest'
 import { LogoutRequest } from '../interfaces/logoutRequest'
 import { UserForgotPasswordRequest } from '../interfaces/userForgotPasswordRequest'
 import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest'
@@ -56,7 +56,7 @@ export class StreetManagerPartyClient {
     }
   }
 
-  public async refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefereshRequest): Promise<TokenRefreshResponse> {
+  public async refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefreshRequest): Promise<TokenRefreshResponse> {
     return this.httpHandler<TokenRefreshResponse>(() => this.axios.post('/refresh', tokenRefreshRequest, this.generateRequestConfig(requestConfig)))
   }
 

@@ -1,3 +1,3 @@
-export interface TokenRefereshRequest {
+export interface TokenRefreshRequest {
     refresh_token: string;
 }
