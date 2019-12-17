@@ -19,6 +19,7 @@ import { SetPasswordRequest } from '../interfaces/setPasswordRequest';
 import { SetPasswordResponse } from '../interfaces/setPasswordResponse';
 import { RemoveUserRequest } from '../interfaces/removeUserRequest';
 import { InviteAdminRequest } from '../interfaces/inviteAdminRequest';
+import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -36,7 +37,7 @@ export declare class StreetManagerPartyClient {
     createWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamCreateRequest: WorkstreamCreateRequest): Promise<WorkstreamCreateResponse>;
     updateWorkstream(requestConfig: RequestConfig, organisationReference: string, workstreamPrefix: string, workstreamUpdateRequest: WorkstreamUpdateRequest): Promise<void>;
     getOrganisation(requestConfig: RequestConfig, organisationReference: string): Promise<OrganisationResponse>;
-    getOrganisations(requestConfig: RequestConfig, request: GetOrganisationsRequest): Promise<OrganisationResponse[]>;
+    getOrganisations(requestConfig: RequestConfig, request: GetOrganisationsRequest): Promise<OrganisationSummaryResponse[]>;
     updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void>;
     createOrganisationContracts(requestConfig: RequestConfig, organisationReference: string, organisationContractsCreateRequest: OrganisationContractsCreateRequest): Promise<void>;
     createUser(requestConfig: RequestConfig, userCreateRequest: UserCreateRequest): Promise<void>;
