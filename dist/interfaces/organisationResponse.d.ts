@@ -11,4 +11,5 @@ export interface OrganisationResponse extends OrganisationSummaryResponse {
     prefix: string;
     organisation_type: OrganisationType;
     contractors?: OrganisationSummaryResponse[];
+    is_hs2_applicable: boolean;
 }
