@@ -14,7 +14,7 @@ import { GetOrganisationsRequest } from '../interfaces/getOrganisationsRequest'
 import { OrganisationContractsCreateRequest } from '../interfaces/organisationContractsCreateRequest'
 import { UserResponse } from '../interfaces/userResponse'
 import { TokenRefreshResponse } from '../interfaces/tokenRefreshResponse'
-import { TokenRefereshRequest } from '../interfaces/tokenRefreshRequest'
+import { TokenRefreshRequest } from '../interfaces/tokenRefreshRequest'
 import { LogoutRequest } from '../interfaces/logoutRequest'
 import { UserForgotPasswordRequest } from '../interfaces/userForgotPasswordRequest'
 import { UserResetPasswordRequest } from '../interfaces/userResetPasswordRequest'
@@ -23,6 +23,7 @@ import { SetPasswordRequest } from '../interfaces/setPasswordRequest'
 import { SetPasswordResponse } from '../interfaces/setPasswordResponse'
 import { RemoveUserRequest } from '../interfaces/removeUserRequest'
 import { InviteAdminRequest } from '../interfaces/inviteAdminRequest'
+import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -56,7 +57,7 @@ export class StreetManagerPartyClient {
     }
   }
 
-  public async refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefereshRequest): Promise<TokenRefreshResponse> {
+  public async refreshTokens(requestConfig: RequestConfig, tokenRefreshRequest: TokenRefreshRequest): Promise<TokenRefreshResponse> {
     return this.httpHandler<TokenRefreshResponse>(() => this.axios.post('/refresh', tokenRefreshRequest, this.generateRequestConfig(requestConfig)))
   }
 
@@ -84,8 +85,8 @@ export class StreetManagerPartyClient {
     return this.httpHandler<OrganisationResponse>(() => this.axios.get(`/organisations/${organisationReference}`, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getOrganisations(requestConfig: RequestConfig, request: GetOrganisationsRequest): Promise<OrganisationResponse[]> {
-    return this.httpHandler<OrganisationResponse[]>(() => this.axios.get(`/organisations`, this.generateRequestConfig(requestConfig, request)))
+  public async getOrganisations(requestConfig: RequestConfig, request: GetOrganisationsRequest): Promise<OrganisationSummaryResponse[]> {
+    return this.httpHandler<OrganisationSummaryResponse[]>(() => this.axios.get(`/organisations`, this.generateRequestConfig(requestConfig, request)))
   }
 
   public async updateOrganisation(requestConfig: RequestConfig, organisationReference: string, organisationUpdateRequest: OrganisationUpdateRequest): Promise<void> {
