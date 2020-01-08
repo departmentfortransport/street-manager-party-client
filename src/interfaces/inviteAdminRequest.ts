@@ -1,5 +1,3 @@
-import { UserGroup } from './referenceTypes'
-
 export interface InviteAdminRequest {
   /** Max length 50 characters */
   email: string
@@ -9,5 +7,4 @@ export interface InviteAdminRequest {
   last_name: string
   /** Max length 20 characters */
   organisation_reference: string
-  roles: UserGroup[]
 }
