@@ -22,6 +22,7 @@ import { InviteAdminRequest } from '../interfaces/inviteAdminRequest';
 import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse';
 import { UpdateUserRolesRequest } from '../interfaces/updateUserRolesRequest';
 import { UpdateUserDetailsRequest } from '../interfaces/updateUserDetailsRequest';
+import { UserWorkstreamAccessUpdateRequest } from '../interfaces/userWorkstreamAccessUpdateRequest';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -53,6 +54,7 @@ export declare class StreetManagerPartyClient {
     updateUserDetails(requestConfig: RequestConfig, email: string, updateUserDetailsRequest: UpdateUserDetailsRequest): Promise<void>;
     setPassword(requestConfig: RequestConfig, setPasswordRequest: SetPasswordRequest): Promise<SetPasswordResponse>;
     removeUser(requestConfig: RequestConfig, removeUserRequest: RemoveUserRequest): Promise<void>;
+    updateUserWorkstreamAccess(requestConfig: RequestConfig, email: string, updateUserWorkstreamAccessRequest: UserWorkstreamAccessUpdateRequest): Promise<void>;
     private httpHandler;
     private handleError;
     private generateRequestConfig;

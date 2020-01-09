@@ -142,6 +142,11 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.post(`/remove-user`, removeUserRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    updateUserWorkstreamAccess(requestConfig, email, updateUserWorkstreamAccessRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/users/${email}/workstreams`, updateUserWorkstreamAccessRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

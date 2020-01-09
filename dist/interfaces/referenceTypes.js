@@ -27,3 +27,8 @@ var UserStatus;
     UserStatus["Invited"] = "INVITED";
     UserStatus["Disabled"] = "DISABLED";
 })(UserStatus = exports.UserStatus || (exports.UserStatus = {}));
+var WorkstreamAccessLevel;
+(function (WorkstreamAccessLevel) {
+    WorkstreamAccessLevel["full_write"] = "full_write";
+    WorkstreamAccessLevel["read_only"] = "read_only";
+})(WorkstreamAccessLevel = exports.WorkstreamAccessLevel || (exports.WorkstreamAccessLevel = {}));
