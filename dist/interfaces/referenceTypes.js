@@ -5,16 +5,16 @@ var WorkstreamStatus;
     WorkstreamStatus["active"] = "active";
     WorkstreamStatus["deactivated"] = "deactivated";
 })(WorkstreamStatus = exports.WorkstreamStatus || (exports.WorkstreamStatus = {}));
-var UserGroup;
-(function (UserGroup) {
-    UserGroup["Planner"] = "Planner";
-    UserGroup["HighwayAuthority"] = "HighwayAuthority";
-    UserGroup["Admin"] = "Admin";
-    UserGroup["Contractor"] = "Contractor";
-    UserGroup["API"] = "API";
-    UserGroup["UI"] = "UI";
-    UserGroup["DataExport"] = "DataExport";
-})(UserGroup = exports.UserGroup || (exports.UserGroup = {}));
+var UserRole;
+(function (UserRole) {
+    UserRole["Planner"] = "Planner";
+    UserRole["HighwayAuthority"] = "HighwayAuthority";
+    UserRole["Admin"] = "Admin";
+    UserRole["Contractor"] = "Contractor";
+    UserRole["API"] = "API";
+    UserRole["UI"] = "UI";
+    UserRole["DataExport"] = "DataExport";
+})(UserRole = exports.UserRole || (exports.UserRole = {}));
 var OrganisationType;
 (function (OrganisationType) {
     OrganisationType["Promoter"] = "PROMOTER";
