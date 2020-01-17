@@ -97,11 +97,6 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.get(`/users/${email}`, this.generateRequestConfig(requestConfig)));
         });
     }
-    getUserContracts(requestConfig, email) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/users/${email}/contracts`, this.generateRequestConfig(requestConfig)));
-        });
-    }
     forgotPassword(requestConfig, userForgotPasswordRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post(`/forgot-password`, userForgotPasswordRequest, this.generateRequestConfig(requestConfig)));
