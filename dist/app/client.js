@@ -122,6 +122,11 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.post(`/invite-admin`, inviteAdminRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    updateUserRoles(requestConfig, email, updateUserRolesRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/users/${email}/roles`, updateUserRolesRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     setPassword(requestConfig, setPasswordRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post('/set-password', setPasswordRequest, this.generateRequestConfig(requestConfig)));

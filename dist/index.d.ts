@@ -22,3 +22,4 @@ export * from './interfaces/setPasswordRequest';
 export * from './interfaces/setPasswordResponse';
 export * from './interfaces/removeUserRequest';
 export * from './interfaces/inviteAdminRequest';
+export * from './interfaces/updateUserRolesRequest';
