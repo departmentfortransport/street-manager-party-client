@@ -1,5 +1,7 @@
-import { OrganisationSummaryResponse } from './organisationSummaryResponse';
+import { UserGroup } from './referenceTypes';
 export interface UserResponse {
-    organisation_reference: string;
-    contracts?: OrganisationSummaryResponse[];
+    first_name?: string;
+    last_name?: string;
+    organisation_name: string;
+    roles?: UserGroup[];
 }
