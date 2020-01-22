@@ -24,3 +24,4 @@ export * from './interfaces/removeUserRequest';
 export * from './interfaces/inviteAdminRequest';
 export * from './interfaces/updateUserRolesRequest';
 export * from './interfaces/updateUserDetailsRequest';
+export * from './interfaces/userWorkstreamAccessUpdateRequest';

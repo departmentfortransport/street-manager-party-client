@@ -26,6 +26,7 @@ import { InviteAdminRequest } from '../interfaces/inviteAdminRequest'
 import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse'
 import { UpdateUserRolesRequest } from '../interfaces/updateUserRolesRequest'
 import { UpdateUserDetailsRequest } from '../interfaces/updateUserDetailsRequest'
+import { UserWorkstreamAccessUpdateRequest } from '../interfaces/userWorkstreamAccessUpdateRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -141,6 +142,10 @@ export class StreetManagerPartyClient {
 
   public async removeUser(requestConfig: RequestConfig, removeUserRequest: RemoveUserRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post(`/remove-user`, removeUserRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateUserWorkstreamAccess(requestConfig: RequestConfig, email: string, updateUserWorkstreamAccessRequest: UserWorkstreamAccessUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/users/${email}/workstreams`, updateUserWorkstreamAccessRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
