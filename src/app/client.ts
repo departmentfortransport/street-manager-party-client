@@ -25,6 +25,8 @@ import { RemoveUserRequest } from '../interfaces/removeUserRequest'
 import { InviteAdminRequest } from '../interfaces/inviteAdminRequest'
 import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse'
 import { UpdateUserRolesRequest } from '../interfaces/updateUserRolesRequest'
+import { UpdateUserDetailsRequest } from '../interfaces/updateUserDetailsRequest'
+import { UserWorkstreamAccessUpdateRequest } from '../interfaces/userWorkstreamAccessUpdateRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -130,12 +132,20 @@ export class StreetManagerPartyClient {
     return this.httpHandler<void>(() => this.axios.put(`/users/${email}/roles`, updateUserRolesRequest, this.generateRequestConfig(requestConfig)))
   }
 
+  public async updateUserDetails(requestConfig: RequestConfig, email: string, updateUserDetailsRequest: UpdateUserDetailsRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/users/${email}`, updateUserDetailsRequest, this.generateRequestConfig(requestConfig)))
+  }
+
   public async setPassword(requestConfig: RequestConfig, setPasswordRequest: SetPasswordRequest): Promise<SetPasswordResponse> {
     return this.httpHandler<SetPasswordResponse>(() => this.axios.post('/set-password', setPasswordRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async removeUser(requestConfig: RequestConfig, removeUserRequest: RemoveUserRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post(`/remove-user`, removeUserRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async updateUserWorkstreamAccess(requestConfig: RequestConfig, email: string, updateUserWorkstreamAccessRequest: UserWorkstreamAccessUpdateRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/users/${email}/workstreams`, updateUserWorkstreamAccessRequest, this.generateRequestConfig(requestConfig)))
   }
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {

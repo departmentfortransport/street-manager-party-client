@@ -24,3 +24,8 @@ export enum UserStatus {
   Invited = 'INVITED',
   Disabled = 'DISABLED'
 }
+
+export enum WorkstreamAccessLevel {
+  full_write = 'full_write',
+  read_only = 'read_only'
+}

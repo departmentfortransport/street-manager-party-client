@@ -127,6 +127,11 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.put(`/users/${email}/roles`, updateUserRolesRequest, this.generateRequestConfig(requestConfig)));
         });
     }
+    updateUserDetails(requestConfig, email, updateUserDetailsRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/users/${email}`, updateUserDetailsRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
     setPassword(requestConfig, setPasswordRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post('/set-password', setPasswordRequest, this.generateRequestConfig(requestConfig)));
@@ -135,6 +140,11 @@ class StreetManagerPartyClient {
     removeUser(requestConfig, removeUserRequest) {
         return __awaiter(this, void 0, void 0, function* () {
             return this.httpHandler(() => this.axios.post(`/remove-user`, removeUserRequest, this.generateRequestConfig(requestConfig)));
+        });
+    }
+    updateUserWorkstreamAccess(requestConfig, email, updateUserWorkstreamAccessRequest) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return this.httpHandler(() => this.axios.put(`/users/${email}/workstreams`, updateUserWorkstreamAccessRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     httpHandler(request) {
