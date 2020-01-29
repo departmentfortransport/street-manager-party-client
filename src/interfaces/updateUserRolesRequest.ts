@@ -1,5 +1,5 @@
-import { UserGroup } from './referenceTypes'
+import { UserRole } from './referenceTypes'
 
 export interface UpdateUserRolesRequest {
-  roles: UserGroup[]
+  roles: UserRole[]
 }
