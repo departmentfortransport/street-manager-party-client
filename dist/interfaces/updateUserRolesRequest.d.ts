@@ -1,4 +1,4 @@
-import { UserRole } from './referenceTypes';
+import { Role } from './referenceTypes';
 export interface UpdateUserRolesRequest {
-    roles: UserRole[];
+    roles: Role[];
 }

@@ -1,4 +1,4 @@
-import { UserRole } from './referenceTypes';
+import { Role } from './referenceTypes';
 export interface InviteUserRequest {
     /** Max length 50 characters */
     email: string;
@@ -6,5 +6,5 @@ export interface InviteUserRequest {
     first_name: string;
     /** Max length 50 characters */
     last_name: string;
-    role?: UserRole;
+    role?: Role;
 }

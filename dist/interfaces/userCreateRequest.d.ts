@@ -1,4 +1,4 @@
-import { UserRole } from './referenceTypes';
+import { Role } from './referenceTypes';
 export interface UserCreateRequest {
     /** Max length 50 characters */
     email: string;
@@ -12,5 +12,5 @@ export interface UserCreateRequest {
     /** Max length 20 characters */
     /** If provided, this must match a registered organisation reference */
     organisation_reference?: string;
-    roles: UserRole[];
+    roles: Role[];
 }
