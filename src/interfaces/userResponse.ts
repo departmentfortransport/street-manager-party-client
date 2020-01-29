@@ -1,5 +1,10 @@
 import { Role } from './referenceTypes'
 import { OrganisationSummaryResponse } from './organisationSummaryResponse'
+import { UserWorkstreamAccess } from './userWorkstreamAccess'
+
+export interface UserWorkstreamAccessDetails extends UserWorkstreamAccess {
+  workstream_name: string
+}
 
 export interface UserResponse {
   first_name?: string
@@ -8,4 +13,5 @@ export interface UserResponse {
   roles?: Role[]
   organisation_reference: string
   contracts?: OrganisationSummaryResponse[]
+  workstreams?: UserWorkstreamAccessDetails[]
 }
