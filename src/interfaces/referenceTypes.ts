@@ -3,7 +3,7 @@ export enum WorkstreamStatus {
   deactivated = 'deactivated'
 }
 
-export enum UserRole {
+export enum Role {
   Planner = 'Planner',
   HighwayAuthority = 'HighwayAuthority',
   Admin = 'Admin',
