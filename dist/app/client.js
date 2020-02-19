@@ -92,9 +92,10 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.post(`/users`, userCreateRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    getUser(requestConfig, email) {
+    getUser(requestConfig, email, swaCode) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.get(`/users/${email}`, this.generateRequestConfig(requestConfig)));
+            const config = this.generateRequestConfig(requestConfig, { swaCode: swaCode });
+            return this.httpHandler(() => this.axios.get(`/users/${email}`, config));
         });
     }
     forgotPassword(requestConfig, userForgotPasswordRequest) {
