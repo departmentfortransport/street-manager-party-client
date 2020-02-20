@@ -104,8 +104,9 @@ export class StreetManagerPartyClient {
     return this.httpHandler<void>(() => this.axios.post(`/users`, userCreateRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async getUser(requestConfig: RequestConfig, email: string): Promise<UserResponse> {
-    return this.httpHandler<UserResponse>(() => this.axios.get(`/users/${email}`, this.generateRequestConfig(requestConfig)))
+  public async getUser(requestConfig: RequestConfig, email: string, swaCode?: string): Promise<UserResponse> {
+    const config: AxiosRequestConfig = this.generateRequestConfig(requestConfig, { swaCode : swaCode })
+    return this.httpHandler<UserResponse>(() => this.axios.get(`/users/${email}`, config))
   }
 
   public async forgotPassword(requestConfig: RequestConfig, userForgotPasswordRequest: UserForgotPasswordRequest): Promise<void> {
