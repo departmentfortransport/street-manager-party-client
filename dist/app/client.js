@@ -128,9 +128,9 @@ class StreetManagerPartyClient {
             return this.httpHandler(() => this.axios.put(`/admin-change-roles/${email}`, adminUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)));
         });
     }
-    internalUpdateUserRoles(requestConfig, email, adminUpdateUserRolesRequest) {
+    internalUpdateUserRoles(requestConfig, email, internalUpdateUserRolesRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.put(`/users/${email}/roles`, adminUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.put(`/users/${email}/roles`, internalUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     updateUserDetails(requestConfig, email, updateUserDetailsRequest) {

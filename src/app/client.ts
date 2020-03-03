@@ -134,8 +134,8 @@ export class StreetManagerPartyClient {
     return this.httpHandler<void>(() => this.axios.put(`/admin-change-roles/${email}`, adminUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async internalUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: InternalUpdateUserRolesRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/users/${email}/roles`, adminUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)))
+  public async internalUpdateUserRoles(requestConfig: RequestConfig, email: string, internalUpdateUserRolesRequest: InternalUpdateUserRolesRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/users/${email}/roles`, internalUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateUserDetails(requestConfig: RequestConfig, email: string, updateUserDetailsRequest: UpdateUserDetailsRequest): Promise<void> {

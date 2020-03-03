@@ -52,7 +52,7 @@ export declare class StreetManagerPartyClient {
     inviteUser(requestConfig: RequestConfig, inviteUserRequest: InviteUserRequest): Promise<void>;
     inviteAdmin(requestConfig: RequestConfig, inviteAdminRequest: InviteAdminRequest): Promise<void>;
     adminUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: AdminUpdateUserRolesRequest): Promise<void>;
-    internalUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: InternalUpdateUserRolesRequest): Promise<void>;
+    internalUpdateUserRoles(requestConfig: RequestConfig, email: string, internalUpdateUserRolesRequest: InternalUpdateUserRolesRequest): Promise<void>;
     updateUserDetails(requestConfig: RequestConfig, email: string, updateUserDetailsRequest: UpdateUserDetailsRequest): Promise<void>;
     setPassword(requestConfig: RequestConfig, setPasswordRequest: SetPasswordRequest): Promise<SetPasswordResponse>;
     removeUser(requestConfig: RequestConfig, removeUserRequest: RemoveUserRequest): Promise<void>;
