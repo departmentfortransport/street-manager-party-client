@@ -24,7 +24,8 @@ import { SetPasswordResponse } from '../interfaces/setPasswordResponse'
 import { RemoveUserRequest } from '../interfaces/removeUserRequest'
 import { InviteAdminRequest } from '../interfaces/inviteAdminRequest'
 import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse'
-import { UpdateUserRolesRequest } from '../interfaces/updateUserRolesRequest'
+import { AdminUpdateUserRolesRequest } from '../interfaces/adminUpdateUserRolesRequest'
+import { InternalUpdateUserRolesRequest } from '../interfaces/internalUpdateUserRolesRequest'
 import { UpdateUserDetailsRequest } from '../interfaces/updateUserDetailsRequest'
 import { UserWorkstreamAccessUpdateRequest } from '../interfaces/userWorkstreamAccessUpdateRequest'
 
@@ -129,8 +130,12 @@ export class StreetManagerPartyClient {
     return this.httpHandler<void>(() => this.axios.post(`/invite-admin`, inviteAdminRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async updateUserRoles(requestConfig: RequestConfig, email: string, updateUserRolesRequest: UpdateUserRolesRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.put(`/users/${email}/roles`, updateUserRolesRequest, this.generateRequestConfig(requestConfig)))
+  public async adminUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: AdminUpdateUserRolesRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/admin-change-roles/${email}`, adminUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async internalUpdateUserRoles(requestConfig: RequestConfig, email: string, internalUpdateUserRolesRequest: InternalUpdateUserRolesRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.put(`/users/${email}/roles`, internalUpdateUserRolesRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async updateUserDetails(requestConfig: RequestConfig, email: string, updateUserDetailsRequest: UpdateUserDetailsRequest): Promise<void> {

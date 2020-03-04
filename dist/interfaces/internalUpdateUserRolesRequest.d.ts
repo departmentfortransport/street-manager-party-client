@@ -1,4 +1,4 @@
 import { Role } from './referenceTypes';
-export interface UpdateUserRolesRequest {
+export interface InternalUpdateUserRolesRequest {
     roles: Role[];
 }
