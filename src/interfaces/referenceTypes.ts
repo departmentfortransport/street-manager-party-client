@@ -14,9 +14,9 @@ export enum Role {
 }
 
 export enum OrganisationType {
-  Promoter = 'PROMOTER',
+  PROMOTER = 'PROMOTER',
   HA = 'HA',
-  Contractor = 'CONTRACTOR'
+  CONTRACTOR = 'CONTRACTOR'
 }
 
 export enum UserStatus {
