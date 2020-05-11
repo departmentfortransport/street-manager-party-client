@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -15,7 +16,7 @@ const http_status_codes_1 = require("http-status-codes");
 class StreetManagerPartyClient {
     constructor(config) {
         this.config = config;
-        let axiosRequestConfig = {
+        const axiosRequestConfig = {
             baseURL: this.config.baseURL,
             timeout: this.config.timeout
         };
@@ -29,7 +30,7 @@ class StreetManagerPartyClient {
     isAvailable() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let response = yield this.axios.get('/status');
+                const response = yield this.axios.get('/status');
                 return response.status === http_status_codes_1.OK;
             }
             catch (err) {
@@ -156,7 +157,7 @@ class StreetManagerPartyClient {
     httpHandler(request) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                let response = yield request();
+                const response = yield request();
                 if (response.data) {
                     return response.data;
                 }
@@ -171,7 +172,7 @@ class StreetManagerPartyClient {
         return Promise.reject(err);
     }
     generateRequestConfig(config, request) {
-        let requestConfig = {
+        const requestConfig = {
             headers: {
                 'x-request-id': config.requestId
             }
