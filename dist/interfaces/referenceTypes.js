@@ -17,9 +17,9 @@ var Role;
 })(Role = exports.Role || (exports.Role = {}));
 var OrganisationType;
 (function (OrganisationType) {
-    OrganisationType["Promoter"] = "PROMOTER";
+    OrganisationType["PROMOTER"] = "PROMOTER";
     OrganisationType["HA"] = "HA";
-    OrganisationType["Contractor"] = "CONTRACTOR";
+    OrganisationType["CONTRACTOR"] = "CONTRACTOR";
 })(OrganisationType = exports.OrganisationType || (exports.OrganisationType = {}));
 var UserStatus;
 (function (UserStatus) {
