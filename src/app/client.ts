@@ -38,7 +38,7 @@ export interface StreetManagerPartyClientConfig {
 export class StreetManagerPartyClient {
   private axios: AxiosInstance
   constructor(private config: StreetManagerPartyClientConfig) {
-    let axiosRequestConfig: AxiosRequestConfig = {
+    const axiosRequestConfig: AxiosRequestConfig = {
       baseURL: this.config.baseURL,
       timeout: this.config.timeout
     }
@@ -54,7 +54,7 @@ export class StreetManagerPartyClient {
 
   public async isAvailable(): Promise<boolean> {
     try {
-      let response: AxiosResponse = await this.axios.get('/status')
+      const response: AxiosResponse = await this.axios.get('/status')
       return response.status === OK
     } catch (err) {
       return false
@@ -156,7 +156,7 @@ export class StreetManagerPartyClient {
 
   private async httpHandler<T>(request: () => AxiosPromise<T>): Promise<T> {
     try {
-      let response: AxiosResponse<T> = await request()
+      const response: AxiosResponse<T> = await request()
       if (response.data) {
         return response.data
       }
@@ -171,7 +171,7 @@ export class StreetManagerPartyClient {
   }
 
   private generateRequestConfig(config: RequestConfig, request?: any): AxiosRequestConfig {
-    let requestConfig: AxiosRequestConfig = {
+    const requestConfig: AxiosRequestConfig = {
       headers: {
         'x-request-id': config.requestId
       }
