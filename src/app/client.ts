@@ -22,7 +22,7 @@ import { InviteUserRequest } from '../interfaces/inviteUserRequest'
 import { SetPasswordRequest } from '../interfaces/setPasswordRequest'
 import { SetPasswordResponse } from '../interfaces/setPasswordResponse'
 import { RemoveUserRequest } from '../interfaces/removeUserRequest'
-import { InviteAdminRequest } from '../interfaces/inviteAdminRequest'
+import { OnboardUserRequest } from '../interfaces/onboardUserRequest'
 import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse'
 import { AdminUpdateUserRolesRequest } from '../interfaces/adminUpdateUserRolesRequest'
 import { InternalUpdateUserRolesRequest } from '../interfaces/internalUpdateUserRolesRequest'
@@ -126,8 +126,8 @@ export class StreetManagerPartyClient {
     return this.httpHandler<void>(() => this.axios.post(`/invite-user`, inviteUserRequest, this.generateRequestConfig(requestConfig)))
   }
 
-  public async inviteAdmin(requestConfig: RequestConfig, inviteAdminRequest: InviteAdminRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/invite-admin`, inviteAdminRequest, this.generateRequestConfig(requestConfig)))
+  public async onboardUser(requestConfig: RequestConfig, onboardUserRequest: OnboardUserRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/invite-admin`, onboardUserRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async adminUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: AdminUpdateUserRolesRequest): Promise<void> {

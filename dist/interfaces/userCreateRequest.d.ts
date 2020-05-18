@@ -8,7 +8,7 @@ export interface UserCreateRequest {
     last_name: string;
     /** Min length 6 characters */
     /** Max length 99 characters */
-    password?: string;
+    password: string;
     /** Max length 20 characters */
     /** If provided, this must match a registered organisation reference */
     organisation_reference?: string;
