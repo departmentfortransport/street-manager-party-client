@@ -127,7 +127,7 @@ export class StreetManagerPartyClient {
   }
 
   public async onboardUser(requestConfig: RequestConfig, onboardUserRequest: OnboardUserRequest): Promise<void> {
-    return this.httpHandler<void>(() => this.axios.post(`/invite-admin`, onboardUserRequest, this.generateRequestConfig(requestConfig)))
+    return this.httpHandler<void>(() => this.axios.post(`/onboard-user`, onboardUserRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async adminUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: AdminUpdateUserRolesRequest): Promise<void> {

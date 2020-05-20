@@ -121,7 +121,7 @@ class StreetManagerPartyClient {
     }
     onboardUser(requestConfig, onboardUserRequest) {
         return __awaiter(this, void 0, void 0, function* () {
-            return this.httpHandler(() => this.axios.post(`/invite-admin`, onboardUserRequest, this.generateRequestConfig(requestConfig)));
+            return this.httpHandler(() => this.axios.post(`/onboard-user`, onboardUserRequest, this.generateRequestConfig(requestConfig)));
         });
     }
     adminUpdateUserRoles(requestConfig, email, adminUpdateUserRolesRequest) {
