@@ -21,7 +21,7 @@ export * from './interfaces/inviteUserRequest';
 export * from './interfaces/setPasswordRequest';
 export * from './interfaces/setPasswordResponse';
 export * from './interfaces/removeUserRequest';
-export * from './interfaces/inviteAdminRequest';
+export * from './interfaces/onboardUserRequest';
 export * from './interfaces/internalUpdateUserRolesRequest';
 export * from './interfaces/updateUserDetailsRequest';
 export * from './interfaces/userWorkstreamAccessUpdateRequest';

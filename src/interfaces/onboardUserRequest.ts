@@ -1,4 +1,6 @@
-export interface InviteAdminRequest {
+import { Role } from './referenceTypes'
+
+export interface OnboardUserRequest {
   /** Max length 50 characters */
   email: string
   /** Max length 50 characters */
@@ -7,4 +9,5 @@ export interface InviteAdminRequest {
   last_name: string
   /** Max length 20 characters */
   organisation_reference: string
+  roles: Role[]
 }

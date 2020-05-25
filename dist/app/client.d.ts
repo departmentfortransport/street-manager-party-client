@@ -18,7 +18,7 @@ import { InviteUserRequest } from '../interfaces/inviteUserRequest';
 import { SetPasswordRequest } from '../interfaces/setPasswordRequest';
 import { SetPasswordResponse } from '../interfaces/setPasswordResponse';
 import { RemoveUserRequest } from '../interfaces/removeUserRequest';
-import { InviteAdminRequest } from '../interfaces/inviteAdminRequest';
+import { OnboardUserRequest } from '../interfaces/onboardUserRequest';
 import { OrganisationSummaryResponse } from '../interfaces/organisationSummaryResponse';
 import { AdminUpdateUserRolesRequest } from '../interfaces/adminUpdateUserRolesRequest';
 import { InternalUpdateUserRolesRequest } from '../interfaces/internalUpdateUserRolesRequest';
@@ -50,7 +50,7 @@ export declare class StreetManagerPartyClient {
     resetPassword(requestConfig: RequestConfig, userResetPasswordRequest: UserResetPasswordRequest): Promise<void>;
     deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void>;
     inviteUser(requestConfig: RequestConfig, inviteUserRequest: InviteUserRequest): Promise<void>;
-    inviteAdmin(requestConfig: RequestConfig, inviteAdminRequest: InviteAdminRequest): Promise<void>;
+    onboardUser(requestConfig: RequestConfig, onboardUserRequest: OnboardUserRequest): Promise<void>;
     adminUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: AdminUpdateUserRolesRequest): Promise<void>;
     internalUpdateUserRoles(requestConfig: RequestConfig, email: string, internalUpdateUserRolesRequest: InternalUpdateUserRolesRequest): Promise<void>;
     updateUserDetails(requestConfig: RequestConfig, email: string, updateUserDetailsRequest: UpdateUserDetailsRequest): Promise<void>;
