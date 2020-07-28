@@ -28,6 +28,7 @@ import { AdminUpdateUserRolesRequest } from '../interfaces/adminUpdateUserRolesR
 import { InternalUpdateUserRolesRequest } from '../interfaces/internalUpdateUserRolesRequest'
 import { UpdateUserDetailsRequest } from '../interfaces/updateUserDetailsRequest'
 import { UserWorkstreamAccessUpdateRequest } from '../interfaces/userWorkstreamAccessUpdateRequest'
+import { ReOnboardUserRequest } from '../interfaces/reOnboardUserRequest'
 
 export interface StreetManagerPartyClientConfig {
   baseURL: string,
@@ -128,6 +129,10 @@ export class StreetManagerPartyClient {
 
   public async onboardUser(requestConfig: RequestConfig, onboardUserRequest: OnboardUserRequest): Promise<void> {
     return this.httpHandler<void>(() => this.axios.post(`/onboard-user`, onboardUserRequest, this.generateRequestConfig(requestConfig)))
+  }
+
+  public async reOnboardUser(requestConfig: RequestConfig, reOnboardUserRequest: ReOnboardUserRequest): Promise<void> {
+    return this.httpHandler<void>(() => this.axios.post(`/re-onboard-user`, reOnboardUserRequest, this.generateRequestConfig(requestConfig)))
   }
 
   public async adminUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: AdminUpdateUserRolesRequest): Promise<void> {
