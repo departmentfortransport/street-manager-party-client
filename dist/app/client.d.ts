@@ -24,6 +24,7 @@ import { AdminUpdateUserRolesRequest } from '../interfaces/adminUpdateUserRolesR
 import { InternalUpdateUserRolesRequest } from '../interfaces/internalUpdateUserRolesRequest';
 import { UpdateUserDetailsRequest } from '../interfaces/updateUserDetailsRequest';
 import { UserWorkstreamAccessUpdateRequest } from '../interfaces/userWorkstreamAccessUpdateRequest';
+import { ReOnboardUserRequest } from '../interfaces/reOnboardUserRequest';
 export interface StreetManagerPartyClientConfig {
     baseURL: string;
     timeout?: number;
@@ -51,6 +52,7 @@ export declare class StreetManagerPartyClient {
     deleteOrganisationContract(requestConfig: RequestConfig, organisationReference: string, contractorOrganisationReference: string): Promise<void>;
     inviteUser(requestConfig: RequestConfig, inviteUserRequest: InviteUserRequest): Promise<void>;
     onboardUser(requestConfig: RequestConfig, onboardUserRequest: OnboardUserRequest): Promise<void>;
+    reOnboardUser(requestConfig: RequestConfig, reOnboardUserRequest: ReOnboardUserRequest): Promise<void>;
     adminUpdateUserRoles(requestConfig: RequestConfig, email: string, adminUpdateUserRolesRequest: AdminUpdateUserRolesRequest): Promise<void>;
     internalUpdateUserRoles(requestConfig: RequestConfig, email: string, internalUpdateUserRolesRequest: InternalUpdateUserRolesRequest): Promise<void>;
     updateUserDetails(requestConfig: RequestConfig, email: string, updateUserDetailsRequest: UpdateUserDetailsRequest): Promise<void>;
