@@ -1,4 +1,4 @@
-import { OrganisationType } from './referenceTypes';
+import { OrganisationTypeResponse } from './referenceTypes';
 import { OrganisationSummaryResponse } from './organisationSummaryResponse';
 export interface OrganisationResponse extends OrganisationSummaryResponse {
     address_line_one: string;
@@ -9,7 +9,7 @@ export interface OrganisationResponse extends OrganisationSummaryResponse {
     postcode: string;
     town?: string;
     prefix: string;
-    organisation_type: OrganisationType;
+    organisation_type: OrganisationTypeResponse;
     contractors?: OrganisationSummaryResponse[];
     is_hs2_applicable: boolean;
 }

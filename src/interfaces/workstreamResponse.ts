@@ -1,7 +1,7 @@
-import { WorkstreamStatus } from './referenceTypes'
+import { WorkstreamStatusResponse } from './referenceTypes'
 
 export interface WorkstreamResponse {
-  status: WorkstreamStatus
+  status: WorkstreamStatusResponse
   prefix: string
   name: string
   description?: string
