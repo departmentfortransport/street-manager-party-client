@@ -2,6 +2,7 @@ import { WorkstreamStatusResponse } from './referenceTypes'
 
 export interface WorkstreamResponse {
   status: WorkstreamStatusResponse
+  status_string: string
   prefix: string
   name: string
   description?: string

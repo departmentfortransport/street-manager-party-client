@@ -4,6 +4,7 @@ import { UserWorkstreamAccessResponse } from './userWorkstreamAccess'
 
 export interface UserWorkstreamAccessDetails extends UserWorkstreamAccessResponse {
   workstream_name: string
+  access_level_string: string
 }
 
 export interface UserResponse {
@@ -11,6 +12,7 @@ export interface UserResponse {
   last_name?: string
   organisation_name: string
   roles?: RoleResponse[]
+  roles_string?: string[]
   organisation_reference: string
   contracts?: OrganisationSummaryResponse[]
   workstreams?: UserWorkstreamAccessDetails[]
