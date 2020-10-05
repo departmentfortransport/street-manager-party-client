@@ -1,3 +1,6 @@
 password: string
+this.axios.post\(`/forgot-password`, userForgotPasswordRequest, this.generateRequestConfig\(requestConfig\)\)
+this.axios.post\(`/reset-password`, userResetPasswordRequest, this.generateRequestConfig\(requestConfig\)\)
+this.axios.post\('/set-password', setPasswordRequest, this.generateRequestConfig\(requestConfig\)\)
 
 .gitallowed
