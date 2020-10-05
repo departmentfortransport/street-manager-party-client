@@ -1,4 +1,5 @@
-export interface WorkstreamCreateRequest {
+import { DelegatedUserIdentification } from './delegatedUserIdentification';
+export interface WorkstreamCreateRequest extends DelegatedUserIdentification {
     /** Must consist of 3 positive whole numbers */
     prefix: string;
     /** Max length 60 characters */
