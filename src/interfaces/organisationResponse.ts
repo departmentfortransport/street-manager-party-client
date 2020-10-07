@@ -11,6 +11,7 @@ export interface OrganisationResponse extends OrganisationSummaryResponse {
   town?: string
   prefix: string
   organisation_type: OrganisationTypeResponse
+  organisation_type_string: string
   contractors?: OrganisationSummaryResponse[]
   is_hs2_applicable: boolean
 }
