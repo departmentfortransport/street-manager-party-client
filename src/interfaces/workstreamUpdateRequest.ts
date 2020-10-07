@@ -1,4 +1,6 @@
-export interface WorkstreamUpdateRequest {
+import { DelegatedUserIdentification } from './delegatedUserIdentification'
+
+export interface WorkstreamUpdateRequest extends DelegatedUserIdentification {
   /** Max length 60 characters */
   name: string
   /** Max length 500 characters */
