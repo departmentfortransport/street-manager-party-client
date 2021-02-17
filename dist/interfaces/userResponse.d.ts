@@ -1,4 +1,4 @@
-import { RoleResponse } from './referenceTypes';
+import { OrganisationStatusResponse, RoleResponse } from './referenceTypes';
 import { OrganisationSummaryResponse } from './organisationSummaryResponse';
 import { UserWorkstreamAccessResponse } from './userWorkstreamAccess';
 export interface UserWorkstreamAccessDetails extends UserWorkstreamAccessResponse {
@@ -14,4 +14,6 @@ export interface UserResponse {
     organisation_reference: string;
     contracts?: OrganisationSummaryResponse[];
     workstreams?: UserWorkstreamAccessDetails[];
+    organisation_status?: OrganisationStatusResponse;
+    organisation_status_string?: string;
 }

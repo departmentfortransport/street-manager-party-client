@@ -69,3 +69,10 @@ var WorkstreamAccessLevelResponse;
     WorkstreamAccessLevelResponse["read_only"] = "read_only";
     WorkstreamAccessLevelResponse["upcoming_enum"] = "upcoming_enum";
 })(WorkstreamAccessLevelResponse = exports.WorkstreamAccessLevelResponse || (exports.WorkstreamAccessLevelResponse = {}));
+var OrganisationStatusResponse;
+(function (OrganisationStatusResponse) {
+    OrganisationStatusResponse["active"] = "active";
+    OrganisationStatusResponse["suspended"] = "suspended";
+    OrganisationStatusResponse["disabled"] = "disabled";
+    OrganisationStatusResponse["upcoming_enum"] = "upcoming_enum";
+})(OrganisationStatusResponse = exports.OrganisationStatusResponse || (exports.OrganisationStatusResponse = {}));

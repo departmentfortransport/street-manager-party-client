@@ -66,3 +66,10 @@ export enum WorkstreamAccessLevelResponse {
   read_only = 'read_only',
   upcoming_enum = 'upcoming_enum'
 }
+
+export enum OrganisationStatusResponse {
+  active = 'active',
+  suspended = 'suspended',
+  disabled = 'disabled',
+  upcoming_enum = 'upcoming_enum'
+}
